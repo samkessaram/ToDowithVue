@@ -17,6 +17,10 @@ new Vue({
         });
         this.newTask = "";
       }
+    },
+    removeTask: function(task){
+      var index = this.taskList.indexOf(task)
+      this.taskList.splice(index,1)
     }
   }
 
