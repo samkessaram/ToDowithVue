@@ -10,7 +10,7 @@
   <section class="panel">
     <input id="mark-all" type="checkbox">
     <input type="text" placeholder="What do you need to do?" class="text-input" autofocus autofocus v-model="newTask" v-on:keyup.enter="addTask">
-    <button>Clear List</button>
+    <button v-on:click="clearList">Clear List</button>
     
   </section>
 
@@ -22,7 +22,7 @@
     </li>
   </ul>
 
-  <pre>{{taskList}}</pre>
+  <pre>{{ $data }}</pre>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.js"></script>
