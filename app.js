@@ -24,6 +24,21 @@ new Vue({
     },
     clearList: function(){
       this.taskList = []
+    },
+    selectAll: function(task){
+      var trueOrFalse = this.areAllSelected ? false : true
+
+      for( var i = 0; i < this.taskList.length; i++){
+        this.taskList[i].checked = trueOrFalse
+      }
+    }
+  },
+
+  computed: {
+    areAllSelected: function(){
+      return this.taskList.every(function(task){
+        return task.checked
+      }) && this.taskList.length > 0
     }
   }
 
